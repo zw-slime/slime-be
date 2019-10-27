@@ -1,0 +1,37 @@
+type User {
+  id: ID! @id
+  username: String! @unique
+  email: String! @unique
+  password: String!
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
+  role: Role! @relation(link: INLINE)
+  posts: [Post!]!
+}
+
+type Post {
+  id: ID! @id
+  title: String!
+  content: String
+  public: Boolean! @default(value: false)
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
+  author: User @relation(link: INLINE)
+  type: Type!
+}
+
+type Role {
+  id: ID! @id
+  name: String! @unique
+  createAt: DateTime! @createdAt
+  updateAt: DateTime! @updatedAt
+  users: [User!]!
+}
+
+type Type {
+  id: ID! @id
+  name: String! @unique
+  createAt: DateTime! @createdAt
+  updateAt: DateTime! @updatedAt
+  posts: [Post]
+}
