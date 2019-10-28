@@ -536,6 +536,8 @@ type RoleObject =
   | RoleFields
   | { name: 'id', args?: [] | false, alias?: string  } 
   | { name: 'name', args?: [] | false, alias?: string  } 
+  | { name: 'desc', args?: [] | false, alias?: string  } 
+  | { name: 'nameCN', args?: [] | false, alias?: string  } 
   | { name: 'createAt', args?: [] | false, alias?: string  } 
   | { name: 'updateAt', args?: [] | false, alias?: string  } 
   | { name: 'users', args?: RoleUsersArgs[] | false, alias?: string  } 
@@ -543,6 +545,8 @@ type RoleObject =
 type RoleFields =
   | 'id'
   | 'name'
+  | 'desc'
+  | 'nameCN'
   | 'createAt'
   | 'updateAt'
   | 'users'
@@ -568,6 +572,22 @@ export interface RoleFieldDetails {
     resolve: undefined
   }
   name: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+  desc: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  nameCN: {
     type: 'String'
     args: {}
     description: string
@@ -2255,12 +2275,16 @@ type RolePreviousValuesObject =
   | RolePreviousValuesFields
   | { name: 'id', args?: [] | false, alias?: string  } 
   | { name: 'name', args?: [] | false, alias?: string  } 
+  | { name: 'desc', args?: [] | false, alias?: string  } 
+  | { name: 'nameCN', args?: [] | false, alias?: string  } 
   | { name: 'createAt', args?: [] | false, alias?: string  } 
   | { name: 'updateAt', args?: [] | false, alias?: string  } 
 
 type RolePreviousValuesFields =
   | 'id'
   | 'name'
+  | 'desc'
+  | 'nameCN'
   | 'createAt'
   | 'updateAt'
 
@@ -2278,6 +2302,22 @@ export interface RolePreviousValuesFieldDetails {
     resolve: undefined
   }
   name: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+  desc: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  nameCN: {
     type: 'String'
     args: {}
     description: string
@@ -2633,6 +2673,34 @@ export interface RoleWhereInput {
   name_not_starts_with?: string | null
   name_ends_with?: string | null
   name_not_ends_with?: string | null
+  desc?: string | null
+  desc_not?: string | null
+  desc_in?: string[]
+  desc_not_in?: string[]
+  desc_lt?: string | null
+  desc_lte?: string | null
+  desc_gt?: string | null
+  desc_gte?: string | null
+  desc_contains?: string | null
+  desc_not_contains?: string | null
+  desc_starts_with?: string | null
+  desc_not_starts_with?: string | null
+  desc_ends_with?: string | null
+  desc_not_ends_with?: string | null
+  nameCN?: string | null
+  nameCN_not?: string | null
+  nameCN_in?: string[]
+  nameCN_not_in?: string[]
+  nameCN_lt?: string | null
+  nameCN_lte?: string | null
+  nameCN_gt?: string | null
+  nameCN_gte?: string | null
+  nameCN_contains?: string | null
+  nameCN_not_contains?: string | null
+  nameCN_starts_with?: string | null
+  nameCN_not_starts_with?: string | null
+  nameCN_ends_with?: string | null
+  nameCN_not_ends_with?: string | null
   createAt?: string | null
   createAt_not?: string | null
   createAt_in?: string[]
@@ -2686,6 +2754,34 @@ export type RoleWhereInputInputObject =
   | { name: 'name_not_starts_with', alias?: string  } 
   | { name: 'name_ends_with', alias?: string  } 
   | { name: 'name_not_ends_with', alias?: string  } 
+  | { name: 'desc', alias?: string  } 
+  | { name: 'desc_not', alias?: string  } 
+  | { name: 'desc_in', alias?: string  } 
+  | { name: 'desc_not_in', alias?: string  } 
+  | { name: 'desc_lt', alias?: string  } 
+  | { name: 'desc_lte', alias?: string  } 
+  | { name: 'desc_gt', alias?: string  } 
+  | { name: 'desc_gte', alias?: string  } 
+  | { name: 'desc_contains', alias?: string  } 
+  | { name: 'desc_not_contains', alias?: string  } 
+  | { name: 'desc_starts_with', alias?: string  } 
+  | { name: 'desc_not_starts_with', alias?: string  } 
+  | { name: 'desc_ends_with', alias?: string  } 
+  | { name: 'desc_not_ends_with', alias?: string  } 
+  | { name: 'nameCN', alias?: string  } 
+  | { name: 'nameCN_not', alias?: string  } 
+  | { name: 'nameCN_in', alias?: string  } 
+  | { name: 'nameCN_not_in', alias?: string  } 
+  | { name: 'nameCN_lt', alias?: string  } 
+  | { name: 'nameCN_lte', alias?: string  } 
+  | { name: 'nameCN_gt', alias?: string  } 
+  | { name: 'nameCN_gte', alias?: string  } 
+  | { name: 'nameCN_contains', alias?: string  } 
+  | { name: 'nameCN_not_contains', alias?: string  } 
+  | { name: 'nameCN_starts_with', alias?: string  } 
+  | { name: 'nameCN_not_starts_with', alias?: string  } 
+  | { name: 'nameCN_ends_with', alias?: string  } 
+  | { name: 'nameCN_not_ends_with', alias?: string  } 
   | { name: 'createAt', alias?: string  } 
   | { name: 'createAt_not', alias?: string  } 
   | { name: 'createAt_in', alias?: string  } 
@@ -2959,11 +3055,13 @@ export type PostWhereUniqueInputInputObject =
 export interface RoleWhereUniqueInput {
   id?: string | null
   name?: string | null
+  nameCN?: string | null
 }
 export type RoleWhereUniqueInputInputObject =
   | Extract<keyof RoleWhereUniqueInput, string>
   | { name: 'id', alias?: string  } 
   | { name: 'name', alias?: string  } 
+  | { name: 'nameCN', alias?: string  } 
   
 export interface TypeWhereUniqueInput {
   id?: string | null
@@ -3003,6 +3101,8 @@ export type RoleCreateOneWithoutUsersInputInputObject =
 export interface RoleCreateWithoutUsersInput {
   id?: string | null
   name?: string
+  desc?: string | null
+  nameCN?: string
   createAt?: string
   updateAt?: string
 }
@@ -3010,6 +3110,8 @@ export type RoleCreateWithoutUsersInputInputObject =
   | Extract<keyof RoleCreateWithoutUsersInput, string>
   | { name: 'id', alias?: string  } 
   | { name: 'name', alias?: string  } 
+  | { name: 'desc', alias?: string  } 
+  | { name: 'nameCN', alias?: string  } 
   | { name: 'createAt', alias?: string  } 
   | { name: 'updateAt', alias?: string  } 
   
@@ -3089,12 +3191,16 @@ export type RoleUpdateOneRequiredWithoutUsersInputInputObject =
   
 export interface RoleUpdateWithoutUsersDataInput {
   name?: string | null
+  desc?: string | null
+  nameCN?: string | null
   createAt?: string | null
   updateAt?: string | null
 }
 export type RoleUpdateWithoutUsersDataInputInputObject =
   | Extract<keyof RoleUpdateWithoutUsersDataInput, string>
   | { name: 'name', alias?: string  } 
+  | { name: 'desc', alias?: string  } 
+  | { name: 'nameCN', alias?: string  } 
   | { name: 'createAt', alias?: string  } 
   | { name: 'updateAt', alias?: string  } 
   
@@ -3467,6 +3573,8 @@ export type PostUpdateManyMutationInputInputObject =
 export interface RoleCreateInput {
   id?: string | null
   name?: string
+  desc?: string | null
+  nameCN?: string
   createAt?: string
   updateAt?: string
   users?: UserCreateManyWithoutRoleInput | null
@@ -3475,6 +3583,8 @@ export type RoleCreateInputInputObject =
   | Extract<keyof RoleCreateInput, string>
   | { name: 'id', alias?: string  } 
   | { name: 'name', alias?: string  } 
+  | { name: 'desc', alias?: string  } 
+  | { name: 'nameCN', alias?: string  } 
   | { name: 'createAt', alias?: string  } 
   | { name: 'updateAt', alias?: string  } 
   | { name: 'users', alias?: string  } 
@@ -3505,6 +3615,8 @@ export type UserCreateWithoutRoleInputInputObject =
   
 export interface RoleUpdateInput {
   name?: string | null
+  desc?: string | null
+  nameCN?: string | null
   createAt?: string | null
   updateAt?: string | null
   users?: UserUpdateManyWithoutRoleInput | null
@@ -3512,6 +3624,8 @@ export interface RoleUpdateInput {
 export type RoleUpdateInputInputObject =
   | Extract<keyof RoleUpdateInput, string>
   | { name: 'name', alias?: string  } 
+  | { name: 'desc', alias?: string  } 
+  | { name: 'nameCN', alias?: string  } 
   | { name: 'createAt', alias?: string  } 
   | { name: 'updateAt', alias?: string  } 
   | { name: 'users', alias?: string  } 
@@ -3749,12 +3863,16 @@ export type UserUpdateManyDataInputInputObject =
   
 export interface RoleUpdateManyMutationInput {
   name?: string | null
+  desc?: string | null
+  nameCN?: string | null
   createAt?: string | null
   updateAt?: string | null
 }
 export type RoleUpdateManyMutationInputInputObject =
   | Extract<keyof RoleUpdateManyMutationInput, string>
   | { name: 'name', alias?: string  } 
+  | { name: 'desc', alias?: string  } 
+  | { name: 'nameCN', alias?: string  } 
   | { name: 'createAt', alias?: string  } 
   | { name: 'updateAt', alias?: string  } 
   
@@ -3995,6 +4113,10 @@ export type RoleOrderByInputValues =
   | 'id_DESC'
   | 'name_ASC'
   | 'name_DESC'
+  | 'desc_ASC'
+  | 'desc_DESC'
+  | 'nameCN_ASC'
+  | 'nameCN_DESC'
   | 'createAt_ASC'
   | 'createAt_DESC'
   | 'updateAt_ASC'

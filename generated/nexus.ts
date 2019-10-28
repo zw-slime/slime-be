@@ -11,174 +11,6 @@ declare global {
 }
 
 export interface NexusGenInputs {
-  PostCreateInput: { // input type
-    author?: NexusGenInputs['UserCreateOneWithoutPostsInput'] | null; // UserCreateOneWithoutPostsInput
-    content?: string | null; // String
-    id?: string | null; // ID
-    public?: boolean | null; // Boolean
-    title: string; // String!
-    type: NexusGenInputs['TypeCreateOneWithoutPostsInput']; // TypeCreateOneWithoutPostsInput!
-  }
-  PostCreateManyWithoutAuthorInput: { // input type
-    connect?: NexusGenInputs['PostWhereUniqueInput'][] | null; // [PostWhereUniqueInput!]
-    create?: NexusGenInputs['PostCreateWithoutAuthorInput'][] | null; // [PostCreateWithoutAuthorInput!]
-  }
-  PostCreateManyWithoutTypeInput: { // input type
-    connect?: NexusGenInputs['PostWhereUniqueInput'][] | null; // [PostWhereUniqueInput!]
-    create?: NexusGenInputs['PostCreateWithoutTypeInput'][] | null; // [PostCreateWithoutTypeInput!]
-  }
-  PostCreateWithoutAuthorInput: { // input type
-    content?: string | null; // String
-    id?: string | null; // ID
-    public?: boolean | null; // Boolean
-    title: string; // String!
-    type: NexusGenInputs['TypeCreateOneWithoutPostsInput']; // TypeCreateOneWithoutPostsInput!
-  }
-  PostCreateWithoutTypeInput: { // input type
-    author?: NexusGenInputs['UserCreateOneWithoutPostsInput'] | null; // UserCreateOneWithoutPostsInput
-    content?: string | null; // String
-    id?: string | null; // ID
-    public?: boolean | null; // Boolean
-    title: string; // String!
-  }
-  PostScalarWhereInput: { // input type
-    AND?: NexusGenInputs['PostScalarWhereInput'][] | null; // [PostScalarWhereInput!]
-    content?: string | null; // String
-    content_contains?: string | null; // String
-    content_ends_with?: string | null; // String
-    content_gt?: string | null; // String
-    content_gte?: string | null; // String
-    content_in?: string[] | null; // [String!]
-    content_lt?: string | null; // String
-    content_lte?: string | null; // String
-    content_not?: string | null; // String
-    content_not_contains?: string | null; // String
-    content_not_ends_with?: string | null; // String
-    content_not_in?: string[] | null; // [String!]
-    content_not_starts_with?: string | null; // String
-    content_starts_with?: string | null; // String
-    createdAt?: any | null; // DateTime
-    createdAt_gt?: any | null; // DateTime
-    createdAt_gte?: any | null; // DateTime
-    createdAt_in?: any[] | null; // [DateTime!]
-    createdAt_lt?: any | null; // DateTime
-    createdAt_lte?: any | null; // DateTime
-    createdAt_not?: any | null; // DateTime
-    createdAt_not_in?: any[] | null; // [DateTime!]
-    id?: string | null; // ID
-    id_contains?: string | null; // ID
-    id_ends_with?: string | null; // ID
-    id_gt?: string | null; // ID
-    id_gte?: string | null; // ID
-    id_in?: string[] | null; // [ID!]
-    id_lt?: string | null; // ID
-    id_lte?: string | null; // ID
-    id_not?: string | null; // ID
-    id_not_contains?: string | null; // ID
-    id_not_ends_with?: string | null; // ID
-    id_not_in?: string[] | null; // [ID!]
-    id_not_starts_with?: string | null; // ID
-    id_starts_with?: string | null; // ID
-    NOT?: NexusGenInputs['PostScalarWhereInput'][] | null; // [PostScalarWhereInput!]
-    OR?: NexusGenInputs['PostScalarWhereInput'][] | null; // [PostScalarWhereInput!]
-    public?: boolean | null; // Boolean
-    public_not?: boolean | null; // Boolean
-    title?: string | null; // String
-    title_contains?: string | null; // String
-    title_ends_with?: string | null; // String
-    title_gt?: string | null; // String
-    title_gte?: string | null; // String
-    title_in?: string[] | null; // [String!]
-    title_lt?: string | null; // String
-    title_lte?: string | null; // String
-    title_not?: string | null; // String
-    title_not_contains?: string | null; // String
-    title_not_ends_with?: string | null; // String
-    title_not_in?: string[] | null; // [String!]
-    title_not_starts_with?: string | null; // String
-    title_starts_with?: string | null; // String
-    updatedAt?: any | null; // DateTime
-    updatedAt_gt?: any | null; // DateTime
-    updatedAt_gte?: any | null; // DateTime
-    updatedAt_in?: any[] | null; // [DateTime!]
-    updatedAt_lt?: any | null; // DateTime
-    updatedAt_lte?: any | null; // DateTime
-    updatedAt_not?: any | null; // DateTime
-    updatedAt_not_in?: any[] | null; // [DateTime!]
-  }
-  PostUpdateInput: { // input type
-    author?: NexusGenInputs['UserUpdateOneWithoutPostsInput'] | null; // UserUpdateOneWithoutPostsInput
-    content?: string | null; // String
-    public?: boolean | null; // Boolean
-    title?: string | null; // String
-    type?: NexusGenInputs['TypeUpdateOneRequiredWithoutPostsInput'] | null; // TypeUpdateOneRequiredWithoutPostsInput
-  }
-  PostUpdateManyDataInput: { // input type
-    content?: string | null; // String
-    public?: boolean | null; // Boolean
-    title?: string | null; // String
-  }
-  PostUpdateManyMutationInput: { // input type
-    content?: string | null; // String
-    public?: boolean | null; // Boolean
-    title?: string | null; // String
-  }
-  PostUpdateManyWithWhereNestedInput: { // input type
-    data: NexusGenInputs['PostUpdateManyDataInput']; // PostUpdateManyDataInput!
-    where: NexusGenInputs['PostScalarWhereInput']; // PostScalarWhereInput!
-  }
-  PostUpdateManyWithoutAuthorInput: { // input type
-    connect?: NexusGenInputs['PostWhereUniqueInput'][] | null; // [PostWhereUniqueInput!]
-    create?: NexusGenInputs['PostCreateWithoutAuthorInput'][] | null; // [PostCreateWithoutAuthorInput!]
-    delete?: NexusGenInputs['PostWhereUniqueInput'][] | null; // [PostWhereUniqueInput!]
-    deleteMany?: NexusGenInputs['PostScalarWhereInput'][] | null; // [PostScalarWhereInput!]
-    disconnect?: NexusGenInputs['PostWhereUniqueInput'][] | null; // [PostWhereUniqueInput!]
-    set?: NexusGenInputs['PostWhereUniqueInput'][] | null; // [PostWhereUniqueInput!]
-    update?: NexusGenInputs['PostUpdateWithWhereUniqueWithoutAuthorInput'][] | null; // [PostUpdateWithWhereUniqueWithoutAuthorInput!]
-    updateMany?: NexusGenInputs['PostUpdateManyWithWhereNestedInput'][] | null; // [PostUpdateManyWithWhereNestedInput!]
-    upsert?: NexusGenInputs['PostUpsertWithWhereUniqueWithoutAuthorInput'][] | null; // [PostUpsertWithWhereUniqueWithoutAuthorInput!]
-  }
-  PostUpdateManyWithoutTypeInput: { // input type
-    connect?: NexusGenInputs['PostWhereUniqueInput'][] | null; // [PostWhereUniqueInput!]
-    create?: NexusGenInputs['PostCreateWithoutTypeInput'][] | null; // [PostCreateWithoutTypeInput!]
-    delete?: NexusGenInputs['PostWhereUniqueInput'][] | null; // [PostWhereUniqueInput!]
-    deleteMany?: NexusGenInputs['PostScalarWhereInput'][] | null; // [PostScalarWhereInput!]
-    disconnect?: NexusGenInputs['PostWhereUniqueInput'][] | null; // [PostWhereUniqueInput!]
-    set?: NexusGenInputs['PostWhereUniqueInput'][] | null; // [PostWhereUniqueInput!]
-    update?: NexusGenInputs['PostUpdateWithWhereUniqueWithoutTypeInput'][] | null; // [PostUpdateWithWhereUniqueWithoutTypeInput!]
-    updateMany?: NexusGenInputs['PostUpdateManyWithWhereNestedInput'][] | null; // [PostUpdateManyWithWhereNestedInput!]
-    upsert?: NexusGenInputs['PostUpsertWithWhereUniqueWithoutTypeInput'][] | null; // [PostUpsertWithWhereUniqueWithoutTypeInput!]
-  }
-  PostUpdateWithWhereUniqueWithoutAuthorInput: { // input type
-    data: NexusGenInputs['PostUpdateWithoutAuthorDataInput']; // PostUpdateWithoutAuthorDataInput!
-    where: NexusGenInputs['PostWhereUniqueInput']; // PostWhereUniqueInput!
-  }
-  PostUpdateWithWhereUniqueWithoutTypeInput: { // input type
-    data: NexusGenInputs['PostUpdateWithoutTypeDataInput']; // PostUpdateWithoutTypeDataInput!
-    where: NexusGenInputs['PostWhereUniqueInput']; // PostWhereUniqueInput!
-  }
-  PostUpdateWithoutAuthorDataInput: { // input type
-    content?: string | null; // String
-    public?: boolean | null; // Boolean
-    title?: string | null; // String
-    type?: NexusGenInputs['TypeUpdateOneRequiredWithoutPostsInput'] | null; // TypeUpdateOneRequiredWithoutPostsInput
-  }
-  PostUpdateWithoutTypeDataInput: { // input type
-    author?: NexusGenInputs['UserUpdateOneWithoutPostsInput'] | null; // UserUpdateOneWithoutPostsInput
-    content?: string | null; // String
-    public?: boolean | null; // Boolean
-    title?: string | null; // String
-  }
-  PostUpsertWithWhereUniqueWithoutAuthorInput: { // input type
-    create: NexusGenInputs['PostCreateWithoutAuthorInput']; // PostCreateWithoutAuthorInput!
-    update: NexusGenInputs['PostUpdateWithoutAuthorDataInput']; // PostUpdateWithoutAuthorDataInput!
-    where: NexusGenInputs['PostWhereUniqueInput']; // PostWhereUniqueInput!
-  }
-  PostUpsertWithWhereUniqueWithoutTypeInput: { // input type
-    create: NexusGenInputs['PostCreateWithoutTypeInput']; // PostCreateWithoutTypeInput!
-    update: NexusGenInputs['PostUpdateWithoutTypeDataInput']; // PostUpdateWithoutTypeDataInput!
-    where: NexusGenInputs['PostWhereUniqueInput']; // PostWhereUniqueInput!
-  }
   PostWhereInput: { // input type
     AND?: NexusGenInputs['PostWhereInput'][] | null; // [PostWhereInput!]
     author?: NexusGenInputs['UserWhereInput'] | null; // UserWhereInput
@@ -246,52 +78,6 @@ export interface NexusGenInputs {
     updatedAt_not?: any | null; // DateTime
     updatedAt_not_in?: any[] | null; // [DateTime!]
   }
-  PostWhereUniqueInput: { // input type
-    id?: string | null; // ID
-  }
-  RoleCreateInput: { // input type
-    createAt: any; // DateTime!
-    id?: string | null; // ID
-    name: string; // String!
-    updateAt: any; // DateTime!
-    users?: NexusGenInputs['UserCreateManyWithoutRoleInput'] | null; // UserCreateManyWithoutRoleInput
-  }
-  RoleCreateOneWithoutUsersInput: { // input type
-    connect?: NexusGenInputs['RoleWhereUniqueInput'] | null; // RoleWhereUniqueInput
-    create?: NexusGenInputs['RoleCreateWithoutUsersInput'] | null; // RoleCreateWithoutUsersInput
-  }
-  RoleCreateWithoutUsersInput: { // input type
-    createAt: any; // DateTime!
-    id?: string | null; // ID
-    name: string; // String!
-    updateAt: any; // DateTime!
-  }
-  RoleUpdateInput: { // input type
-    createAt?: any | null; // DateTime
-    name?: string | null; // String
-    updateAt?: any | null; // DateTime
-    users?: NexusGenInputs['UserUpdateManyWithoutRoleInput'] | null; // UserUpdateManyWithoutRoleInput
-  }
-  RoleUpdateManyMutationInput: { // input type
-    createAt?: any | null; // DateTime
-    name?: string | null; // String
-    updateAt?: any | null; // DateTime
-  }
-  RoleUpdateOneRequiredWithoutUsersInput: { // input type
-    connect?: NexusGenInputs['RoleWhereUniqueInput'] | null; // RoleWhereUniqueInput
-    create?: NexusGenInputs['RoleCreateWithoutUsersInput'] | null; // RoleCreateWithoutUsersInput
-    update?: NexusGenInputs['RoleUpdateWithoutUsersDataInput'] | null; // RoleUpdateWithoutUsersDataInput
-    upsert?: NexusGenInputs['RoleUpsertWithoutUsersInput'] | null; // RoleUpsertWithoutUsersInput
-  }
-  RoleUpdateWithoutUsersDataInput: { // input type
-    createAt?: any | null; // DateTime
-    name?: string | null; // String
-    updateAt?: any | null; // DateTime
-  }
-  RoleUpsertWithoutUsersInput: { // input type
-    create: NexusGenInputs['RoleCreateWithoutUsersInput']; // RoleCreateWithoutUsersInput!
-    update: NexusGenInputs['RoleUpdateWithoutUsersDataInput']; // RoleUpdateWithoutUsersDataInput!
-  }
   RoleWhereInput: { // input type
     AND?: NexusGenInputs['RoleWhereInput'][] | null; // [RoleWhereInput!]
     createAt?: any | null; // DateTime
@@ -302,6 +88,20 @@ export interface NexusGenInputs {
     createAt_lte?: any | null; // DateTime
     createAt_not?: any | null; // DateTime
     createAt_not_in?: any[] | null; // [DateTime!]
+    desc?: string | null; // String
+    desc_contains?: string | null; // String
+    desc_ends_with?: string | null; // String
+    desc_gt?: string | null; // String
+    desc_gte?: string | null; // String
+    desc_in?: string[] | null; // [String!]
+    desc_lt?: string | null; // String
+    desc_lte?: string | null; // String
+    desc_not?: string | null; // String
+    desc_not_contains?: string | null; // String
+    desc_not_ends_with?: string | null; // String
+    desc_not_in?: string[] | null; // [String!]
+    desc_not_starts_with?: string | null; // String
+    desc_starts_with?: string | null; // String
     id?: string | null; // ID
     id_contains?: string | null; // ID
     id_ends_with?: string | null; // ID
@@ -330,6 +130,20 @@ export interface NexusGenInputs {
     name_not_in?: string[] | null; // [String!]
     name_not_starts_with?: string | null; // String
     name_starts_with?: string | null; // String
+    nameCN?: string | null; // String
+    nameCN_contains?: string | null; // String
+    nameCN_ends_with?: string | null; // String
+    nameCN_gt?: string | null; // String
+    nameCN_gte?: string | null; // String
+    nameCN_in?: string[] | null; // [String!]
+    nameCN_lt?: string | null; // String
+    nameCN_lte?: string | null; // String
+    nameCN_not?: string | null; // String
+    nameCN_not_contains?: string | null; // String
+    nameCN_not_ends_with?: string | null; // String
+    nameCN_not_in?: string[] | null; // [String!]
+    nameCN_not_starts_with?: string | null; // String
+    nameCN_starts_with?: string | null; // String
     NOT?: NexusGenInputs['RoleWhereInput'][] | null; // [RoleWhereInput!]
     OR?: NexusGenInputs['RoleWhereInput'][] | null; // [RoleWhereInput!]
     updateAt?: any | null; // DateTime
@@ -343,53 +157,6 @@ export interface NexusGenInputs {
     users_every?: NexusGenInputs['UserWhereInput'] | null; // UserWhereInput
     users_none?: NexusGenInputs['UserWhereInput'] | null; // UserWhereInput
     users_some?: NexusGenInputs['UserWhereInput'] | null; // UserWhereInput
-  }
-  RoleWhereUniqueInput: { // input type
-    id?: string | null; // ID
-    name?: string | null; // String
-  }
-  TypeCreateInput: { // input type
-    createAt: any; // DateTime!
-    id?: string | null; // ID
-    name: string; // String!
-    posts?: NexusGenInputs['PostCreateManyWithoutTypeInput'] | null; // PostCreateManyWithoutTypeInput
-    updateAt: any; // DateTime!
-  }
-  TypeCreateOneWithoutPostsInput: { // input type
-    connect?: NexusGenInputs['TypeWhereUniqueInput'] | null; // TypeWhereUniqueInput
-    create?: NexusGenInputs['TypeCreateWithoutPostsInput'] | null; // TypeCreateWithoutPostsInput
-  }
-  TypeCreateWithoutPostsInput: { // input type
-    createAt: any; // DateTime!
-    id?: string | null; // ID
-    name: string; // String!
-    updateAt: any; // DateTime!
-  }
-  TypeUpdateInput: { // input type
-    createAt?: any | null; // DateTime
-    name?: string | null; // String
-    posts?: NexusGenInputs['PostUpdateManyWithoutTypeInput'] | null; // PostUpdateManyWithoutTypeInput
-    updateAt?: any | null; // DateTime
-  }
-  TypeUpdateManyMutationInput: { // input type
-    createAt?: any | null; // DateTime
-    name?: string | null; // String
-    updateAt?: any | null; // DateTime
-  }
-  TypeUpdateOneRequiredWithoutPostsInput: { // input type
-    connect?: NexusGenInputs['TypeWhereUniqueInput'] | null; // TypeWhereUniqueInput
-    create?: NexusGenInputs['TypeCreateWithoutPostsInput'] | null; // TypeCreateWithoutPostsInput
-    update?: NexusGenInputs['TypeUpdateWithoutPostsDataInput'] | null; // TypeUpdateWithoutPostsDataInput
-    upsert?: NexusGenInputs['TypeUpsertWithoutPostsInput'] | null; // TypeUpsertWithoutPostsInput
-  }
-  TypeUpdateWithoutPostsDataInput: { // input type
-    createAt?: any | null; // DateTime
-    name?: string | null; // String
-    updateAt?: any | null; // DateTime
-  }
-  TypeUpsertWithoutPostsInput: { // input type
-    create: NexusGenInputs['TypeCreateWithoutPostsInput']; // TypeCreateWithoutPostsInput!
-    update: NexusGenInputs['TypeUpdateWithoutPostsDataInput']; // TypeUpdateWithoutPostsDataInput!
   }
   TypeWhereInput: { // input type
     AND?: NexusGenInputs['TypeWhereInput'][] | null; // [TypeWhereInput!]
@@ -442,182 +209,6 @@ export interface NexusGenInputs {
     updateAt_lte?: any | null; // DateTime
     updateAt_not?: any | null; // DateTime
     updateAt_not_in?: any[] | null; // [DateTime!]
-  }
-  TypeWhereUniqueInput: { // input type
-    id?: string | null; // ID
-    name?: string | null; // String
-  }
-  UserCreateInput: { // input type
-    email: string; // String!
-    id?: string | null; // ID
-    password: string; // String!
-    posts?: NexusGenInputs['PostCreateManyWithoutAuthorInput'] | null; // PostCreateManyWithoutAuthorInput
-    role: NexusGenInputs['RoleCreateOneWithoutUsersInput']; // RoleCreateOneWithoutUsersInput!
-    username: string; // String!
-  }
-  UserCreateManyWithoutRoleInput: { // input type
-    connect?: NexusGenInputs['UserWhereUniqueInput'][] | null; // [UserWhereUniqueInput!]
-    create?: NexusGenInputs['UserCreateWithoutRoleInput'][] | null; // [UserCreateWithoutRoleInput!]
-  }
-  UserCreateOneWithoutPostsInput: { // input type
-    connect?: NexusGenInputs['UserWhereUniqueInput'] | null; // UserWhereUniqueInput
-    create?: NexusGenInputs['UserCreateWithoutPostsInput'] | null; // UserCreateWithoutPostsInput
-  }
-  UserCreateWithoutPostsInput: { // input type
-    email: string; // String!
-    id?: string | null; // ID
-    password: string; // String!
-    role: NexusGenInputs['RoleCreateOneWithoutUsersInput']; // RoleCreateOneWithoutUsersInput!
-    username: string; // String!
-  }
-  UserCreateWithoutRoleInput: { // input type
-    email: string; // String!
-    id?: string | null; // ID
-    password: string; // String!
-    posts?: NexusGenInputs['PostCreateManyWithoutAuthorInput'] | null; // PostCreateManyWithoutAuthorInput
-    username: string; // String!
-  }
-  UserScalarWhereInput: { // input type
-    AND?: NexusGenInputs['UserScalarWhereInput'][] | null; // [UserScalarWhereInput!]
-    createdAt?: any | null; // DateTime
-    createdAt_gt?: any | null; // DateTime
-    createdAt_gte?: any | null; // DateTime
-    createdAt_in?: any[] | null; // [DateTime!]
-    createdAt_lt?: any | null; // DateTime
-    createdAt_lte?: any | null; // DateTime
-    createdAt_not?: any | null; // DateTime
-    createdAt_not_in?: any[] | null; // [DateTime!]
-    email?: string | null; // String
-    email_contains?: string | null; // String
-    email_ends_with?: string | null; // String
-    email_gt?: string | null; // String
-    email_gte?: string | null; // String
-    email_in?: string[] | null; // [String!]
-    email_lt?: string | null; // String
-    email_lte?: string | null; // String
-    email_not?: string | null; // String
-    email_not_contains?: string | null; // String
-    email_not_ends_with?: string | null; // String
-    email_not_in?: string[] | null; // [String!]
-    email_not_starts_with?: string | null; // String
-    email_starts_with?: string | null; // String
-    id?: string | null; // ID
-    id_contains?: string | null; // ID
-    id_ends_with?: string | null; // ID
-    id_gt?: string | null; // ID
-    id_gte?: string | null; // ID
-    id_in?: string[] | null; // [ID!]
-    id_lt?: string | null; // ID
-    id_lte?: string | null; // ID
-    id_not?: string | null; // ID
-    id_not_contains?: string | null; // ID
-    id_not_ends_with?: string | null; // ID
-    id_not_in?: string[] | null; // [ID!]
-    id_not_starts_with?: string | null; // ID
-    id_starts_with?: string | null; // ID
-    NOT?: NexusGenInputs['UserScalarWhereInput'][] | null; // [UserScalarWhereInput!]
-    OR?: NexusGenInputs['UserScalarWhereInput'][] | null; // [UserScalarWhereInput!]
-    password?: string | null; // String
-    password_contains?: string | null; // String
-    password_ends_with?: string | null; // String
-    password_gt?: string | null; // String
-    password_gte?: string | null; // String
-    password_in?: string[] | null; // [String!]
-    password_lt?: string | null; // String
-    password_lte?: string | null; // String
-    password_not?: string | null; // String
-    password_not_contains?: string | null; // String
-    password_not_ends_with?: string | null; // String
-    password_not_in?: string[] | null; // [String!]
-    password_not_starts_with?: string | null; // String
-    password_starts_with?: string | null; // String
-    updatedAt?: any | null; // DateTime
-    updatedAt_gt?: any | null; // DateTime
-    updatedAt_gte?: any | null; // DateTime
-    updatedAt_in?: any[] | null; // [DateTime!]
-    updatedAt_lt?: any | null; // DateTime
-    updatedAt_lte?: any | null; // DateTime
-    updatedAt_not?: any | null; // DateTime
-    updatedAt_not_in?: any[] | null; // [DateTime!]
-    username?: string | null; // String
-    username_contains?: string | null; // String
-    username_ends_with?: string | null; // String
-    username_gt?: string | null; // String
-    username_gte?: string | null; // String
-    username_in?: string[] | null; // [String!]
-    username_lt?: string | null; // String
-    username_lte?: string | null; // String
-    username_not?: string | null; // String
-    username_not_contains?: string | null; // String
-    username_not_ends_with?: string | null; // String
-    username_not_in?: string[] | null; // [String!]
-    username_not_starts_with?: string | null; // String
-    username_starts_with?: string | null; // String
-  }
-  UserUpdateInput: { // input type
-    email?: string | null; // String
-    password?: string | null; // String
-    posts?: NexusGenInputs['PostUpdateManyWithoutAuthorInput'] | null; // PostUpdateManyWithoutAuthorInput
-    role?: NexusGenInputs['RoleUpdateOneRequiredWithoutUsersInput'] | null; // RoleUpdateOneRequiredWithoutUsersInput
-    username?: string | null; // String
-  }
-  UserUpdateManyDataInput: { // input type
-    email?: string | null; // String
-    password?: string | null; // String
-    username?: string | null; // String
-  }
-  UserUpdateManyMutationInput: { // input type
-    email?: string | null; // String
-    password?: string | null; // String
-    username?: string | null; // String
-  }
-  UserUpdateManyWithWhereNestedInput: { // input type
-    data: NexusGenInputs['UserUpdateManyDataInput']; // UserUpdateManyDataInput!
-    where: NexusGenInputs['UserScalarWhereInput']; // UserScalarWhereInput!
-  }
-  UserUpdateManyWithoutRoleInput: { // input type
-    connect?: NexusGenInputs['UserWhereUniqueInput'][] | null; // [UserWhereUniqueInput!]
-    create?: NexusGenInputs['UserCreateWithoutRoleInput'][] | null; // [UserCreateWithoutRoleInput!]
-    delete?: NexusGenInputs['UserWhereUniqueInput'][] | null; // [UserWhereUniqueInput!]
-    deleteMany?: NexusGenInputs['UserScalarWhereInput'][] | null; // [UserScalarWhereInput!]
-    disconnect?: NexusGenInputs['UserWhereUniqueInput'][] | null; // [UserWhereUniqueInput!]
-    set?: NexusGenInputs['UserWhereUniqueInput'][] | null; // [UserWhereUniqueInput!]
-    update?: NexusGenInputs['UserUpdateWithWhereUniqueWithoutRoleInput'][] | null; // [UserUpdateWithWhereUniqueWithoutRoleInput!]
-    updateMany?: NexusGenInputs['UserUpdateManyWithWhereNestedInput'][] | null; // [UserUpdateManyWithWhereNestedInput!]
-    upsert?: NexusGenInputs['UserUpsertWithWhereUniqueWithoutRoleInput'][] | null; // [UserUpsertWithWhereUniqueWithoutRoleInput!]
-  }
-  UserUpdateOneWithoutPostsInput: { // input type
-    connect?: NexusGenInputs['UserWhereUniqueInput'] | null; // UserWhereUniqueInput
-    create?: NexusGenInputs['UserCreateWithoutPostsInput'] | null; // UserCreateWithoutPostsInput
-    delete?: boolean | null; // Boolean
-    disconnect?: boolean | null; // Boolean
-    update?: NexusGenInputs['UserUpdateWithoutPostsDataInput'] | null; // UserUpdateWithoutPostsDataInput
-    upsert?: NexusGenInputs['UserUpsertWithoutPostsInput'] | null; // UserUpsertWithoutPostsInput
-  }
-  UserUpdateWithWhereUniqueWithoutRoleInput: { // input type
-    data: NexusGenInputs['UserUpdateWithoutRoleDataInput']; // UserUpdateWithoutRoleDataInput!
-    where: NexusGenInputs['UserWhereUniqueInput']; // UserWhereUniqueInput!
-  }
-  UserUpdateWithoutPostsDataInput: { // input type
-    email?: string | null; // String
-    password?: string | null; // String
-    role?: NexusGenInputs['RoleUpdateOneRequiredWithoutUsersInput'] | null; // RoleUpdateOneRequiredWithoutUsersInput
-    username?: string | null; // String
-  }
-  UserUpdateWithoutRoleDataInput: { // input type
-    email?: string | null; // String
-    password?: string | null; // String
-    posts?: NexusGenInputs['PostUpdateManyWithoutAuthorInput'] | null; // PostUpdateManyWithoutAuthorInput
-    username?: string | null; // String
-  }
-  UserUpsertWithWhereUniqueWithoutRoleInput: { // input type
-    create: NexusGenInputs['UserCreateWithoutRoleInput']; // UserCreateWithoutRoleInput!
-    update: NexusGenInputs['UserUpdateWithoutRoleDataInput']; // UserUpdateWithoutRoleDataInput!
-    where: NexusGenInputs['UserWhereUniqueInput']; // UserWhereUniqueInput!
-  }
-  UserUpsertWithoutPostsInput: { // input type
-    create: NexusGenInputs['UserCreateWithoutPostsInput']; // UserCreateWithoutPostsInput!
-    update: NexusGenInputs['UserUpdateWithoutPostsDataInput']; // UserUpdateWithoutPostsDataInput!
   }
   UserWhereInput: { // input type
     AND?: NexusGenInputs['UserWhereInput'][] | null; // [UserWhereInput!]
@@ -700,43 +291,15 @@ export interface NexusGenInputs {
     username_not_starts_with?: string | null; // String
     username_starts_with?: string | null; // String
   }
-  UserWhereUniqueInput: { // input type
-    email?: string | null; // String
-    id?: string | null; // ID
-    username?: string | null; // String
-  }
 }
 
 export interface NexusGenEnums {
   PostOrderByInput: "content_ASC" | "content_DESC" | "createdAt_ASC" | "createdAt_DESC" | "id_ASC" | "id_DESC" | "public_ASC" | "public_DESC" | "title_ASC" | "title_DESC" | "updatedAt_ASC" | "updatedAt_DESC"
-  RoleOrderByInput: "createAt_ASC" | "createAt_DESC" | "createdAt_ASC" | "createdAt_DESC" | "id_ASC" | "id_DESC" | "name_ASC" | "name_DESC" | "updateAt_ASC" | "updateAt_DESC" | "updatedAt_ASC" | "updatedAt_DESC"
-  TypeOrderByInput: "createAt_ASC" | "createAt_DESC" | "createdAt_ASC" | "createdAt_DESC" | "id_ASC" | "id_DESC" | "name_ASC" | "name_DESC" | "updateAt_ASC" | "updateAt_DESC" | "updatedAt_ASC" | "updatedAt_DESC"
   UserOrderByInput: "createdAt_ASC" | "createdAt_DESC" | "email_ASC" | "email_DESC" | "id_ASC" | "id_DESC" | "password_ASC" | "password_DESC" | "updatedAt_ASC" | "updatedAt_DESC" | "username_ASC" | "username_DESC"
 }
 
 export interface NexusGenRootTypes {
-  AggregatePost: { // root type
-    count: number; // Int!
-  }
-  AggregateRole: { // root type
-    count: number; // Int!
-  }
-  AggregateType: { // root type
-    count: number; // Int!
-  }
-  AggregateUser: { // root type
-    count: number; // Int!
-  }
-  BatchPayload: { // root type
-    count: any; // Long!
-  }
   Mutation: {};
-  PageInfo: { // root type
-    endCursor?: string | null; // String
-    hasNextPage: boolean; // Boolean!
-    hasPreviousPage: boolean; // Boolean!
-    startCursor?: string | null; // String
-  }
   Post: { // root type
     content?: string | null; // String
     createdAt: any; // DateTime!
@@ -745,42 +308,20 @@ export interface NexusGenRootTypes {
     title: string; // String!
     updatedAt: any; // DateTime!
   }
-  PostConnection: { // root type
-    edges: NexusGenRootTypes['PostEdge'][]; // [PostEdge!]!
-    pageInfo: NexusGenRootTypes['PageInfo']; // PageInfo!
-  }
-  PostEdge: { // root type
-    cursor: string; // String!
-    node: NexusGenRootTypes['Post']; // Post!
-  }
   Query: {};
   Role: { // root type
     createAt: any; // DateTime!
+    desc?: string | null; // String
     id: string; // ID!
     name: string; // String!
+    nameCN: string; // String!
     updateAt: any; // DateTime!
-  }
-  RoleConnection: { // root type
-    edges: NexusGenRootTypes['RoleEdge'][]; // [RoleEdge!]!
-    pageInfo: NexusGenRootTypes['PageInfo']; // PageInfo!
-  }
-  RoleEdge: { // root type
-    cursor: string; // String!
-    node: NexusGenRootTypes['Role']; // Role!
   }
   Type: { // root type
     createAt: any; // DateTime!
     id: string; // ID!
     name: string; // String!
     updateAt: any; // DateTime!
-  }
-  TypeConnection: { // root type
-    edges: NexusGenRootTypes['TypeEdge'][]; // [TypeEdge!]!
-    pageInfo: NexusGenRootTypes['PageInfo']; // PageInfo!
-  }
-  TypeEdge: { // root type
-    cursor: string; // String!
-    node: NexusGenRootTypes['Type']; // Type!
   }
   User: { // root type
     createdAt: any; // DateTime!
@@ -790,136 +331,27 @@ export interface NexusGenRootTypes {
     updatedAt: any; // DateTime!
     username: string; // String!
   }
-  UserConnection: { // root type
-    edges: NexusGenRootTypes['UserEdge'][]; // [UserEdge!]!
-    pageInfo: NexusGenRootTypes['PageInfo']; // PageInfo!
-  }
-  UserEdge: { // root type
-    cursor: string; // String!
-    node: NexusGenRootTypes['User']; // User!
-  }
   String: string;
   Int: number;
   Float: number;
   Boolean: boolean;
   ID: string;
   DateTime: any;
-  Long: any;
 }
 
 export interface NexusGenAllTypes extends NexusGenRootTypes {
-  PostCreateInput: NexusGenInputs['PostCreateInput'];
-  PostCreateManyWithoutAuthorInput: NexusGenInputs['PostCreateManyWithoutAuthorInput'];
-  PostCreateManyWithoutTypeInput: NexusGenInputs['PostCreateManyWithoutTypeInput'];
-  PostCreateWithoutAuthorInput: NexusGenInputs['PostCreateWithoutAuthorInput'];
-  PostCreateWithoutTypeInput: NexusGenInputs['PostCreateWithoutTypeInput'];
-  PostScalarWhereInput: NexusGenInputs['PostScalarWhereInput'];
-  PostUpdateInput: NexusGenInputs['PostUpdateInput'];
-  PostUpdateManyDataInput: NexusGenInputs['PostUpdateManyDataInput'];
-  PostUpdateManyMutationInput: NexusGenInputs['PostUpdateManyMutationInput'];
-  PostUpdateManyWithWhereNestedInput: NexusGenInputs['PostUpdateManyWithWhereNestedInput'];
-  PostUpdateManyWithoutAuthorInput: NexusGenInputs['PostUpdateManyWithoutAuthorInput'];
-  PostUpdateManyWithoutTypeInput: NexusGenInputs['PostUpdateManyWithoutTypeInput'];
-  PostUpdateWithWhereUniqueWithoutAuthorInput: NexusGenInputs['PostUpdateWithWhereUniqueWithoutAuthorInput'];
-  PostUpdateWithWhereUniqueWithoutTypeInput: NexusGenInputs['PostUpdateWithWhereUniqueWithoutTypeInput'];
-  PostUpdateWithoutAuthorDataInput: NexusGenInputs['PostUpdateWithoutAuthorDataInput'];
-  PostUpdateWithoutTypeDataInput: NexusGenInputs['PostUpdateWithoutTypeDataInput'];
-  PostUpsertWithWhereUniqueWithoutAuthorInput: NexusGenInputs['PostUpsertWithWhereUniqueWithoutAuthorInput'];
-  PostUpsertWithWhereUniqueWithoutTypeInput: NexusGenInputs['PostUpsertWithWhereUniqueWithoutTypeInput'];
   PostWhereInput: NexusGenInputs['PostWhereInput'];
-  PostWhereUniqueInput: NexusGenInputs['PostWhereUniqueInput'];
-  RoleCreateInput: NexusGenInputs['RoleCreateInput'];
-  RoleCreateOneWithoutUsersInput: NexusGenInputs['RoleCreateOneWithoutUsersInput'];
-  RoleCreateWithoutUsersInput: NexusGenInputs['RoleCreateWithoutUsersInput'];
-  RoleUpdateInput: NexusGenInputs['RoleUpdateInput'];
-  RoleUpdateManyMutationInput: NexusGenInputs['RoleUpdateManyMutationInput'];
-  RoleUpdateOneRequiredWithoutUsersInput: NexusGenInputs['RoleUpdateOneRequiredWithoutUsersInput'];
-  RoleUpdateWithoutUsersDataInput: NexusGenInputs['RoleUpdateWithoutUsersDataInput'];
-  RoleUpsertWithoutUsersInput: NexusGenInputs['RoleUpsertWithoutUsersInput'];
   RoleWhereInput: NexusGenInputs['RoleWhereInput'];
-  RoleWhereUniqueInput: NexusGenInputs['RoleWhereUniqueInput'];
-  TypeCreateInput: NexusGenInputs['TypeCreateInput'];
-  TypeCreateOneWithoutPostsInput: NexusGenInputs['TypeCreateOneWithoutPostsInput'];
-  TypeCreateWithoutPostsInput: NexusGenInputs['TypeCreateWithoutPostsInput'];
-  TypeUpdateInput: NexusGenInputs['TypeUpdateInput'];
-  TypeUpdateManyMutationInput: NexusGenInputs['TypeUpdateManyMutationInput'];
-  TypeUpdateOneRequiredWithoutPostsInput: NexusGenInputs['TypeUpdateOneRequiredWithoutPostsInput'];
-  TypeUpdateWithoutPostsDataInput: NexusGenInputs['TypeUpdateWithoutPostsDataInput'];
-  TypeUpsertWithoutPostsInput: NexusGenInputs['TypeUpsertWithoutPostsInput'];
   TypeWhereInput: NexusGenInputs['TypeWhereInput'];
-  TypeWhereUniqueInput: NexusGenInputs['TypeWhereUniqueInput'];
-  UserCreateInput: NexusGenInputs['UserCreateInput'];
-  UserCreateManyWithoutRoleInput: NexusGenInputs['UserCreateManyWithoutRoleInput'];
-  UserCreateOneWithoutPostsInput: NexusGenInputs['UserCreateOneWithoutPostsInput'];
-  UserCreateWithoutPostsInput: NexusGenInputs['UserCreateWithoutPostsInput'];
-  UserCreateWithoutRoleInput: NexusGenInputs['UserCreateWithoutRoleInput'];
-  UserScalarWhereInput: NexusGenInputs['UserScalarWhereInput'];
-  UserUpdateInput: NexusGenInputs['UserUpdateInput'];
-  UserUpdateManyDataInput: NexusGenInputs['UserUpdateManyDataInput'];
-  UserUpdateManyMutationInput: NexusGenInputs['UserUpdateManyMutationInput'];
-  UserUpdateManyWithWhereNestedInput: NexusGenInputs['UserUpdateManyWithWhereNestedInput'];
-  UserUpdateManyWithoutRoleInput: NexusGenInputs['UserUpdateManyWithoutRoleInput'];
-  UserUpdateOneWithoutPostsInput: NexusGenInputs['UserUpdateOneWithoutPostsInput'];
-  UserUpdateWithWhereUniqueWithoutRoleInput: NexusGenInputs['UserUpdateWithWhereUniqueWithoutRoleInput'];
-  UserUpdateWithoutPostsDataInput: NexusGenInputs['UserUpdateWithoutPostsDataInput'];
-  UserUpdateWithoutRoleDataInput: NexusGenInputs['UserUpdateWithoutRoleDataInput'];
-  UserUpsertWithWhereUniqueWithoutRoleInput: NexusGenInputs['UserUpsertWithWhereUniqueWithoutRoleInput'];
-  UserUpsertWithoutPostsInput: NexusGenInputs['UserUpsertWithoutPostsInput'];
   UserWhereInput: NexusGenInputs['UserWhereInput'];
-  UserWhereUniqueInput: NexusGenInputs['UserWhereUniqueInput'];
   PostOrderByInput: NexusGenEnums['PostOrderByInput'];
-  RoleOrderByInput: NexusGenEnums['RoleOrderByInput'];
-  TypeOrderByInput: NexusGenEnums['TypeOrderByInput'];
   UserOrderByInput: NexusGenEnums['UserOrderByInput'];
 }
 
 export interface NexusGenFieldTypes {
-  AggregatePost: { // field return type
-    count: number; // Int!
-  }
-  AggregateRole: { // field return type
-    count: number; // Int!
-  }
-  AggregateType: { // field return type
-    count: number; // Int!
-  }
-  AggregateUser: { // field return type
-    count: number; // Int!
-  }
-  BatchPayload: { // field return type
-    count: any; // Long!
-  }
   Mutation: { // field return type
-    createPost: NexusGenRootTypes['Post']; // Post!
     createRole: NexusGenRootTypes['Role']; // Role!
-    createType: NexusGenRootTypes['Type']; // Type!
     createUser: NexusGenRootTypes['User']; // User!
-    deleteManyPosts: NexusGenRootTypes['BatchPayload']; // BatchPayload!
-    deleteManyRoles: NexusGenRootTypes['BatchPayload']; // BatchPayload!
-    deleteManyTypes: NexusGenRootTypes['BatchPayload']; // BatchPayload!
-    deleteManyUsers: NexusGenRootTypes['BatchPayload']; // BatchPayload!
-    deletePost: NexusGenRootTypes['Post'] | null; // Post
-    deleteRole: NexusGenRootTypes['Role'] | null; // Role
-    deleteType: NexusGenRootTypes['Type'] | null; // Type
-    deleteUser: NexusGenRootTypes['User'] | null; // User
-    updateManyPosts: NexusGenRootTypes['BatchPayload']; // BatchPayload!
-    updateManyRoles: NexusGenRootTypes['BatchPayload']; // BatchPayload!
-    updateManyTypes: NexusGenRootTypes['BatchPayload']; // BatchPayload!
-    updateManyUsers: NexusGenRootTypes['BatchPayload']; // BatchPayload!
-    updatePost: NexusGenRootTypes['Post'] | null; // Post
-    updateRole: NexusGenRootTypes['Role'] | null; // Role
-    updateType: NexusGenRootTypes['Type'] | null; // Type
-    updateUser: NexusGenRootTypes['User'] | null; // User
-    upsertPost: NexusGenRootTypes['Post']; // Post!
-    upsertRole: NexusGenRootTypes['Role']; // Role!
-    upsertType: NexusGenRootTypes['Type']; // Type!
-    upsertUser: NexusGenRootTypes['User']; // User!
-  }
-  PageInfo: { // field return type
-    endCursor: string | null; // String
-    hasNextPage: boolean; // Boolean!
-    hasPreviousPage: boolean; // Boolean!
-    startCursor: string | null; // String
   }
   Post: { // field return type
     author: NexusGenRootTypes['User'] | null; // User
@@ -931,44 +363,18 @@ export interface NexusGenFieldTypes {
     type: NexusGenRootTypes['Type']; // Type!
     updatedAt: any; // DateTime!
   }
-  PostConnection: { // field return type
-    aggregate: NexusGenRootTypes['AggregatePost']; // AggregatePost!
-    edges: NexusGenRootTypes['PostEdge'][]; // [PostEdge!]!
-    pageInfo: NexusGenRootTypes['PageInfo']; // PageInfo!
-  }
-  PostEdge: { // field return type
-    cursor: string; // String!
-    node: NexusGenRootTypes['Post']; // Post!
-  }
   Query: { // field return type
-    post: NexusGenRootTypes['Post'] | null; // Post
-    posts: NexusGenRootTypes['Post'][]; // [Post!]!
-    postsConnection: NexusGenRootTypes['PostConnection']; // PostConnection!
-    role: NexusGenRootTypes['Role'] | null; // Role
     roles: NexusGenRootTypes['Role'][]; // [Role!]!
-    rolesConnection: NexusGenRootTypes['RoleConnection']; // RoleConnection!
-    type: NexusGenRootTypes['Type'] | null; // Type
-    types: NexusGenRootTypes['Type'][]; // [Type!]!
-    typesConnection: NexusGenRootTypes['TypeConnection']; // TypeConnection!
-    user: NexusGenRootTypes['User'] | null; // User
     users: NexusGenRootTypes['User'][]; // [User!]!
-    usersConnection: NexusGenRootTypes['UserConnection']; // UserConnection!
   }
   Role: { // field return type
     createAt: any; // DateTime!
+    desc: string | null; // String
     id: string; // ID!
     name: string; // String!
+    nameCN: string; // String!
     updateAt: any; // DateTime!
     users: NexusGenRootTypes['User'][] | null; // [User!]
-  }
-  RoleConnection: { // field return type
-    aggregate: NexusGenRootTypes['AggregateRole']; // AggregateRole!
-    edges: NexusGenRootTypes['RoleEdge'][]; // [RoleEdge!]!
-    pageInfo: NexusGenRootTypes['PageInfo']; // PageInfo!
-  }
-  RoleEdge: { // field return type
-    cursor: string; // String!
-    node: NexusGenRootTypes['Role']; // Role!
   }
   Type: { // field return type
     createAt: any; // DateTime!
@@ -976,15 +382,6 @@ export interface NexusGenFieldTypes {
     name: string; // String!
     posts: NexusGenRootTypes['Post'][] | null; // [Post!]
     updateAt: any; // DateTime!
-  }
-  TypeConnection: { // field return type
-    aggregate: NexusGenRootTypes['AggregateType']; // AggregateType!
-    edges: NexusGenRootTypes['TypeEdge'][]; // [TypeEdge!]!
-    pageInfo: NexusGenRootTypes['PageInfo']; // PageInfo!
-  }
-  TypeEdge: { // field return type
-    cursor: string; // String!
-    node: NexusGenRootTypes['Type']; // Type!
   }
   User: { // field return type
     createdAt: any; // DateTime!
@@ -996,192 +393,32 @@ export interface NexusGenFieldTypes {
     updatedAt: any; // DateTime!
     username: string; // String!
   }
-  UserConnection: { // field return type
-    aggregate: NexusGenRootTypes['AggregateUser']; // AggregateUser!
-    edges: NexusGenRootTypes['UserEdge'][]; // [UserEdge!]!
-    pageInfo: NexusGenRootTypes['PageInfo']; // PageInfo!
-  }
-  UserEdge: { // field return type
-    cursor: string; // String!
-    node: NexusGenRootTypes['User']; // User!
-  }
 }
 
 export interface NexusGenArgTypes {
   Mutation: {
-    createPost: { // args
-      data: NexusGenInputs['PostCreateInput']; // PostCreateInput!
-    }
     createRole: { // args
-      data: NexusGenInputs['RoleCreateInput']; // RoleCreateInput!
-    }
-    createType: { // args
-      data: NexusGenInputs['TypeCreateInput']; // TypeCreateInput!
+      desc?: string | null; // String
+      name: string; // String!
+      nameCN: string; // String!
     }
     createUser: { // args
-      data: NexusGenInputs['UserCreateInput']; // UserCreateInput!
-    }
-    deleteManyPosts: { // args
-      where?: NexusGenInputs['PostWhereInput'] | null; // PostWhereInput
-    }
-    deleteManyRoles: { // args
-      where?: NexusGenInputs['RoleWhereInput'] | null; // RoleWhereInput
-    }
-    deleteManyTypes: { // args
-      where?: NexusGenInputs['TypeWhereInput'] | null; // TypeWhereInput
-    }
-    deleteManyUsers: { // args
-      where?: NexusGenInputs['UserWhereInput'] | null; // UserWhereInput
-    }
-    deletePost: { // args
-      where: NexusGenInputs['PostWhereUniqueInput']; // PostWhereUniqueInput!
-    }
-    deleteRole: { // args
-      where: NexusGenInputs['RoleWhereUniqueInput']; // RoleWhereUniqueInput!
-    }
-    deleteType: { // args
-      where: NexusGenInputs['TypeWhereUniqueInput']; // TypeWhereUniqueInput!
-    }
-    deleteUser: { // args
-      where: NexusGenInputs['UserWhereUniqueInput']; // UserWhereUniqueInput!
-    }
-    updateManyPosts: { // args
-      data: NexusGenInputs['PostUpdateManyMutationInput']; // PostUpdateManyMutationInput!
-      where?: NexusGenInputs['PostWhereInput'] | null; // PostWhereInput
-    }
-    updateManyRoles: { // args
-      data: NexusGenInputs['RoleUpdateManyMutationInput']; // RoleUpdateManyMutationInput!
-      where?: NexusGenInputs['RoleWhereInput'] | null; // RoleWhereInput
-    }
-    updateManyTypes: { // args
-      data: NexusGenInputs['TypeUpdateManyMutationInput']; // TypeUpdateManyMutationInput!
-      where?: NexusGenInputs['TypeWhereInput'] | null; // TypeWhereInput
-    }
-    updateManyUsers: { // args
-      data: NexusGenInputs['UserUpdateManyMutationInput']; // UserUpdateManyMutationInput!
-      where?: NexusGenInputs['UserWhereInput'] | null; // UserWhereInput
-    }
-    updatePost: { // args
-      data: NexusGenInputs['PostUpdateInput']; // PostUpdateInput!
-      where: NexusGenInputs['PostWhereUniqueInput']; // PostWhereUniqueInput!
-    }
-    updateRole: { // args
-      data: NexusGenInputs['RoleUpdateInput']; // RoleUpdateInput!
-      where: NexusGenInputs['RoleWhereUniqueInput']; // RoleWhereUniqueInput!
-    }
-    updateType: { // args
-      data: NexusGenInputs['TypeUpdateInput']; // TypeUpdateInput!
-      where: NexusGenInputs['TypeWhereUniqueInput']; // TypeWhereUniqueInput!
-    }
-    updateUser: { // args
-      data: NexusGenInputs['UserUpdateInput']; // UserUpdateInput!
-      where: NexusGenInputs['UserWhereUniqueInput']; // UserWhereUniqueInput!
-    }
-    upsertPost: { // args
-      create: NexusGenInputs['PostCreateInput']; // PostCreateInput!
-      update: NexusGenInputs['PostUpdateInput']; // PostUpdateInput!
-      where: NexusGenInputs['PostWhereUniqueInput']; // PostWhereUniqueInput!
-    }
-    upsertRole: { // args
-      create: NexusGenInputs['RoleCreateInput']; // RoleCreateInput!
-      update: NexusGenInputs['RoleUpdateInput']; // RoleUpdateInput!
-      where: NexusGenInputs['RoleWhereUniqueInput']; // RoleWhereUniqueInput!
-    }
-    upsertType: { // args
-      create: NexusGenInputs['TypeCreateInput']; // TypeCreateInput!
-      update: NexusGenInputs['TypeUpdateInput']; // TypeUpdateInput!
-      where: NexusGenInputs['TypeWhereUniqueInput']; // TypeWhereUniqueInput!
-    }
-    upsertUser: { // args
-      create: NexusGenInputs['UserCreateInput']; // UserCreateInput!
-      update: NexusGenInputs['UserUpdateInput']; // UserUpdateInput!
-      where: NexusGenInputs['UserWhereUniqueInput']; // UserWhereUniqueInput!
+      email: string; // String!
+      password: string; // String!
+      role: string; // String!
+      username: string; // String!
     }
   }
   Query: {
-    post: { // args
-      where: NexusGenInputs['PostWhereUniqueInput']; // PostWhereUniqueInput!
-    }
-    posts: { // args
-      after?: string | null; // String
-      before?: string | null; // String
-      first?: number | null; // Int
-      last?: number | null; // Int
-      orderBy?: NexusGenEnums['PostOrderByInput'] | null; // PostOrderByInput
-      skip?: number | null; // Int
-      where?: NexusGenInputs['PostWhereInput'] | null; // PostWhereInput
-    }
-    postsConnection: { // args
-      after?: string | null; // String
-      before?: string | null; // String
-      first?: number | null; // Int
-      last?: number | null; // Int
-      orderBy?: NexusGenEnums['PostOrderByInput'] | null; // PostOrderByInput
-      skip?: number | null; // Int
-      where?: NexusGenInputs['PostWhereInput'] | null; // PostWhereInput
-    }
-    role: { // args
-      where: NexusGenInputs['RoleWhereUniqueInput']; // RoleWhereUniqueInput!
-    }
     roles: { // args
-      after?: string | null; // String
-      before?: string | null; // String
-      first?: number | null; // Int
-      last?: number | null; // Int
-      orderBy?: NexusGenEnums['RoleOrderByInput'] | null; // RoleOrderByInput
-      skip?: number | null; // Int
-      where?: NexusGenInputs['RoleWhereInput'] | null; // RoleWhereInput
-    }
-    rolesConnection: { // args
-      after?: string | null; // String
-      before?: string | null; // String
-      first?: number | null; // Int
-      last?: number | null; // Int
-      orderBy?: NexusGenEnums['RoleOrderByInput'] | null; // RoleOrderByInput
-      skip?: number | null; // Int
-      where?: NexusGenInputs['RoleWhereInput'] | null; // RoleWhereInput
-    }
-    type: { // args
-      where: NexusGenInputs['TypeWhereUniqueInput']; // TypeWhereUniqueInput!
-    }
-    types: { // args
-      after?: string | null; // String
-      before?: string | null; // String
-      first?: number | null; // Int
-      last?: number | null; // Int
-      orderBy?: NexusGenEnums['TypeOrderByInput'] | null; // TypeOrderByInput
-      skip?: number | null; // Int
-      where?: NexusGenInputs['TypeWhereInput'] | null; // TypeWhereInput
-    }
-    typesConnection: { // args
-      after?: string | null; // String
-      before?: string | null; // String
-      first?: number | null; // Int
-      last?: number | null; // Int
-      orderBy?: NexusGenEnums['TypeOrderByInput'] | null; // TypeOrderByInput
-      skip?: number | null; // Int
-      where?: NexusGenInputs['TypeWhereInput'] | null; // TypeWhereInput
-    }
-    user: { // args
-      where: NexusGenInputs['UserWhereUniqueInput']; // UserWhereUniqueInput!
+      pn: number; // Int!
+      ps: number; // Int!
+      search: string; // String!
     }
     users: { // args
-      after?: string | null; // String
-      before?: string | null; // String
-      first?: number | null; // Int
-      last?: number | null; // Int
-      orderBy?: NexusGenEnums['UserOrderByInput'] | null; // UserOrderByInput
-      skip?: number | null; // Int
-      where?: NexusGenInputs['UserWhereInput'] | null; // UserWhereInput
-    }
-    usersConnection: { // args
-      after?: string | null; // String
-      before?: string | null; // String
-      first?: number | null; // Int
-      last?: number | null; // Int
-      orderBy?: NexusGenEnums['UserOrderByInput'] | null; // UserOrderByInput
-      skip?: number | null; // Int
-      where?: NexusGenInputs['UserWhereInput'] | null; // UserWhereInput
+      pn: number; // Int!
+      ps: number; // Int!
+      search: string; // String!
     }
   }
   Role: {
@@ -1224,15 +461,15 @@ export interface NexusGenAbstractResolveReturnTypes {
 
 export interface NexusGenInheritedFields {}
 
-export type NexusGenObjectNames = "AggregatePost" | "AggregateRole" | "AggregateType" | "AggregateUser" | "BatchPayload" | "Mutation" | "PageInfo" | "Post" | "PostConnection" | "PostEdge" | "Query" | "Role" | "RoleConnection" | "RoleEdge" | "Type" | "TypeConnection" | "TypeEdge" | "User" | "UserConnection" | "UserEdge";
+export type NexusGenObjectNames = "Mutation" | "Post" | "Query" | "Role" | "Type" | "User";
 
-export type NexusGenInputNames = "PostCreateInput" | "PostCreateManyWithoutAuthorInput" | "PostCreateManyWithoutTypeInput" | "PostCreateWithoutAuthorInput" | "PostCreateWithoutTypeInput" | "PostScalarWhereInput" | "PostUpdateInput" | "PostUpdateManyDataInput" | "PostUpdateManyMutationInput" | "PostUpdateManyWithWhereNestedInput" | "PostUpdateManyWithoutAuthorInput" | "PostUpdateManyWithoutTypeInput" | "PostUpdateWithWhereUniqueWithoutAuthorInput" | "PostUpdateWithWhereUniqueWithoutTypeInput" | "PostUpdateWithoutAuthorDataInput" | "PostUpdateWithoutTypeDataInput" | "PostUpsertWithWhereUniqueWithoutAuthorInput" | "PostUpsertWithWhereUniqueWithoutTypeInput" | "PostWhereInput" | "PostWhereUniqueInput" | "RoleCreateInput" | "RoleCreateOneWithoutUsersInput" | "RoleCreateWithoutUsersInput" | "RoleUpdateInput" | "RoleUpdateManyMutationInput" | "RoleUpdateOneRequiredWithoutUsersInput" | "RoleUpdateWithoutUsersDataInput" | "RoleUpsertWithoutUsersInput" | "RoleWhereInput" | "RoleWhereUniqueInput" | "TypeCreateInput" | "TypeCreateOneWithoutPostsInput" | "TypeCreateWithoutPostsInput" | "TypeUpdateInput" | "TypeUpdateManyMutationInput" | "TypeUpdateOneRequiredWithoutPostsInput" | "TypeUpdateWithoutPostsDataInput" | "TypeUpsertWithoutPostsInput" | "TypeWhereInput" | "TypeWhereUniqueInput" | "UserCreateInput" | "UserCreateManyWithoutRoleInput" | "UserCreateOneWithoutPostsInput" | "UserCreateWithoutPostsInput" | "UserCreateWithoutRoleInput" | "UserScalarWhereInput" | "UserUpdateInput" | "UserUpdateManyDataInput" | "UserUpdateManyMutationInput" | "UserUpdateManyWithWhereNestedInput" | "UserUpdateManyWithoutRoleInput" | "UserUpdateOneWithoutPostsInput" | "UserUpdateWithWhereUniqueWithoutRoleInput" | "UserUpdateWithoutPostsDataInput" | "UserUpdateWithoutRoleDataInput" | "UserUpsertWithWhereUniqueWithoutRoleInput" | "UserUpsertWithoutPostsInput" | "UserWhereInput" | "UserWhereUniqueInput";
+export type NexusGenInputNames = "PostWhereInput" | "RoleWhereInput" | "TypeWhereInput" | "UserWhereInput";
 
-export type NexusGenEnumNames = "PostOrderByInput" | "RoleOrderByInput" | "TypeOrderByInput" | "UserOrderByInput";
+export type NexusGenEnumNames = "PostOrderByInput" | "UserOrderByInput";
 
 export type NexusGenInterfaceNames = never;
 
-export type NexusGenScalarNames = "Boolean" | "DateTime" | "Float" | "ID" | "Int" | "Long" | "String";
+export type NexusGenScalarNames = "Boolean" | "DateTime" | "Float" | "ID" | "Int" | "String";
 
 export type NexusGenUnionNames = never;
 

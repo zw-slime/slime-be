@@ -1,20 +1,11 @@
-import { makePrismaSchema, prismaObjectType } from "nexus-prisma";
+import { makePrismaSchema } from "nexus-prisma";
 import datamodelInfo from "../generated/nexus-prisma/datamodel-info";
 import { prisma } from "../generated/prisma-client";
 import * as path from "path";
 import { GraphQLServer } from "graphql-yoga";
 
-const Query = prismaObjectType({
-  name: "Query",
-  definition(t) {
-    t.prismaFields(["*"]);
-  }
-});
-
-const Mutation = prismaObjectType({
-  name: "Mutation",
-  definition: t => t.prismaFields(["*"])
-});
+import { Mutation } from "./mutation";
+import { Query } from "./query";
 
 const schema = makePrismaSchema({
   types: [Query, Mutation],

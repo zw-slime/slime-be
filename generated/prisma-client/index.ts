@@ -251,6 +251,10 @@ export type RoleOrderByInput =
   | "id_DESC"
   | "name_ASC"
   | "name_DESC"
+  | "desc_ASC"
+  | "desc_DESC"
+  | "nameCN_ASC"
+  | "nameCN_DESC"
   | "createAt_ASC"
   | "createAt_DESC"
   | "updateAt_ASC"
@@ -279,6 +283,8 @@ export type PostWhereUniqueInput = AtLeastOne<{
 export interface RoleCreateWithoutUsersInput {
   id?: Maybe<ID_Input>;
   name: String;
+  desc?: Maybe<String>;
+  nameCN: String;
 }
 
 export interface PostUpdateManyDataInput {
@@ -436,10 +442,13 @@ export interface RoleUpdateOneRequiredWithoutUsersInput {
 export type RoleWhereUniqueInput = AtLeastOne<{
   id: Maybe<ID_Input>;
   name?: Maybe<String>;
+  nameCN?: Maybe<String>;
 }>;
 
 export interface RoleUpdateWithoutUsersDataInput {
   name?: Maybe<String>;
+  desc?: Maybe<String>;
+  nameCN?: Maybe<String>;
 }
 
 export interface PostUpdateWithoutTypeDataInput {
@@ -710,6 +719,8 @@ export interface UserCreateWithoutPostsInput {
 export interface RoleCreateInput {
   id?: Maybe<ID_Input>;
   name: String;
+  desc?: Maybe<String>;
+  nameCN: String;
   users?: Maybe<UserCreateManyWithoutRoleInput>;
 }
 
@@ -742,6 +753,34 @@ export interface RoleWhereInput {
   name_not_starts_with?: Maybe<String>;
   name_ends_with?: Maybe<String>;
   name_not_ends_with?: Maybe<String>;
+  desc?: Maybe<String>;
+  desc_not?: Maybe<String>;
+  desc_in?: Maybe<String[] | String>;
+  desc_not_in?: Maybe<String[] | String>;
+  desc_lt?: Maybe<String>;
+  desc_lte?: Maybe<String>;
+  desc_gt?: Maybe<String>;
+  desc_gte?: Maybe<String>;
+  desc_contains?: Maybe<String>;
+  desc_not_contains?: Maybe<String>;
+  desc_starts_with?: Maybe<String>;
+  desc_not_starts_with?: Maybe<String>;
+  desc_ends_with?: Maybe<String>;
+  desc_not_ends_with?: Maybe<String>;
+  nameCN?: Maybe<String>;
+  nameCN_not?: Maybe<String>;
+  nameCN_in?: Maybe<String[] | String>;
+  nameCN_not_in?: Maybe<String[] | String>;
+  nameCN_lt?: Maybe<String>;
+  nameCN_lte?: Maybe<String>;
+  nameCN_gt?: Maybe<String>;
+  nameCN_gte?: Maybe<String>;
+  nameCN_contains?: Maybe<String>;
+  nameCN_not_contains?: Maybe<String>;
+  nameCN_starts_with?: Maybe<String>;
+  nameCN_not_starts_with?: Maybe<String>;
+  nameCN_ends_with?: Maybe<String>;
+  nameCN_not_ends_with?: Maybe<String>;
   createAt?: Maybe<DateTimeInput>;
   createAt_not?: Maybe<DateTimeInput>;
   createAt_in?: Maybe<DateTimeInput[] | DateTimeInput>;
@@ -824,6 +863,8 @@ export type TypeWhereUniqueInput = AtLeastOne<{
 
 export interface RoleUpdateInput {
   name?: Maybe<String>;
+  desc?: Maybe<String>;
+  nameCN?: Maybe<String>;
   users?: Maybe<UserUpdateManyWithoutRoleInput>;
 }
 
@@ -913,6 +954,8 @@ export interface PostUpdateWithWhereUniqueWithoutTypeInput {
 
 export interface RoleUpdateManyMutationInput {
   name?: Maybe<String>;
+  desc?: Maybe<String>;
+  nameCN?: Maybe<String>;
 }
 
 export interface PostScalarWhereInput {
@@ -1107,6 +1150,8 @@ export interface UserPreviousValuesSubscription
 export interface Role {
   id: ID_Output;
   name: String;
+  desc?: String;
+  nameCN: String;
   createAt: DateTimeOutput;
   updateAt: DateTimeOutput;
 }
@@ -1114,6 +1159,8 @@ export interface Role {
 export interface RolePromise extends Promise<Role>, Fragmentable {
   id: () => Promise<ID_Output>;
   name: () => Promise<String>;
+  desc: () => Promise<String>;
+  nameCN: () => Promise<String>;
   createAt: () => Promise<DateTimeOutput>;
   updateAt: () => Promise<DateTimeOutput>;
   users: <T = FragmentableArray<User>>(args?: {
@@ -1132,6 +1179,8 @@ export interface RoleSubscription
     Fragmentable {
   id: () => Promise<AsyncIterator<ID_Output>>;
   name: () => Promise<AsyncIterator<String>>;
+  desc: () => Promise<AsyncIterator<String>>;
+  nameCN: () => Promise<AsyncIterator<String>>;
   createAt: () => Promise<AsyncIterator<DateTimeOutput>>;
   updateAt: () => Promise<AsyncIterator<DateTimeOutput>>;
   users: <T = Promise<AsyncIterator<UserSubscription>>>(args?: {
@@ -1150,6 +1199,8 @@ export interface RoleNullablePromise
     Fragmentable {
   id: () => Promise<ID_Output>;
   name: () => Promise<String>;
+  desc: () => Promise<String>;
+  nameCN: () => Promise<String>;
   createAt: () => Promise<DateTimeOutput>;
   updateAt: () => Promise<DateTimeOutput>;
   users: <T = FragmentableArray<User>>(args?: {
@@ -1525,6 +1576,8 @@ export interface AggregatePostSubscription
 export interface RolePreviousValues {
   id: ID_Output;
   name: String;
+  desc?: String;
+  nameCN: String;
   createAt: DateTimeOutput;
   updateAt: DateTimeOutput;
 }
@@ -1534,6 +1587,8 @@ export interface RolePreviousValuesPromise
     Fragmentable {
   id: () => Promise<ID_Output>;
   name: () => Promise<String>;
+  desc: () => Promise<String>;
+  nameCN: () => Promise<String>;
   createAt: () => Promise<DateTimeOutput>;
   updateAt: () => Promise<DateTimeOutput>;
 }
@@ -1543,6 +1598,8 @@ export interface RolePreviousValuesSubscription
     Fragmentable {
   id: () => Promise<AsyncIterator<ID_Output>>;
   name: () => Promise<AsyncIterator<String>>;
+  desc: () => Promise<AsyncIterator<String>>;
+  nameCN: () => Promise<AsyncIterator<String>>;
   createAt: () => Promise<AsyncIterator<DateTimeOutput>>;
   updateAt: () => Promise<AsyncIterator<DateTimeOutput>>;
 }

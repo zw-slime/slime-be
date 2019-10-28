@@ -411,6 +411,8 @@ type Query {
 type Role {
   id: ID!
   name: String!
+  desc: String
+  nameCN: String!
   createAt: DateTime!
   updateAt: DateTime!
   users(where: UserWhereInput, orderBy: UserOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [User!]
@@ -425,6 +427,8 @@ type RoleConnection {
 input RoleCreateInput {
   id: ID
   name: String!
+  desc: String
+  nameCN: String!
   users: UserCreateManyWithoutRoleInput
 }
 
@@ -436,6 +440,8 @@ input RoleCreateOneWithoutUsersInput {
 input RoleCreateWithoutUsersInput {
   id: ID
   name: String!
+  desc: String
+  nameCN: String!
 }
 
 type RoleEdge {
@@ -448,6 +454,10 @@ enum RoleOrderByInput {
   id_DESC
   name_ASC
   name_DESC
+  desc_ASC
+  desc_DESC
+  nameCN_ASC
+  nameCN_DESC
   createAt_ASC
   createAt_DESC
   updateAt_ASC
@@ -457,6 +467,8 @@ enum RoleOrderByInput {
 type RolePreviousValues {
   id: ID!
   name: String!
+  desc: String
+  nameCN: String!
   createAt: DateTime!
   updateAt: DateTime!
 }
@@ -481,11 +493,15 @@ input RoleSubscriptionWhereInput {
 
 input RoleUpdateInput {
   name: String
+  desc: String
+  nameCN: String
   users: UserUpdateManyWithoutRoleInput
 }
 
 input RoleUpdateManyMutationInput {
   name: String
+  desc: String
+  nameCN: String
 }
 
 input RoleUpdateOneRequiredWithoutUsersInput {
@@ -497,6 +513,8 @@ input RoleUpdateOneRequiredWithoutUsersInput {
 
 input RoleUpdateWithoutUsersDataInput {
   name: String
+  desc: String
+  nameCN: String
 }
 
 input RoleUpsertWithoutUsersInput {
@@ -533,6 +551,34 @@ input RoleWhereInput {
   name_not_starts_with: String
   name_ends_with: String
   name_not_ends_with: String
+  desc: String
+  desc_not: String
+  desc_in: [String!]
+  desc_not_in: [String!]
+  desc_lt: String
+  desc_lte: String
+  desc_gt: String
+  desc_gte: String
+  desc_contains: String
+  desc_not_contains: String
+  desc_starts_with: String
+  desc_not_starts_with: String
+  desc_ends_with: String
+  desc_not_ends_with: String
+  nameCN: String
+  nameCN_not: String
+  nameCN_in: [String!]
+  nameCN_not_in: [String!]
+  nameCN_lt: String
+  nameCN_lte: String
+  nameCN_gt: String
+  nameCN_gte: String
+  nameCN_contains: String
+  nameCN_not_contains: String
+  nameCN_starts_with: String
+  nameCN_not_starts_with: String
+  nameCN_ends_with: String
+  nameCN_not_ends_with: String
   createAt: DateTime
   createAt_not: DateTime
   createAt_in: [DateTime!]
@@ -560,6 +606,7 @@ input RoleWhereInput {
 input RoleWhereUniqueInput {
   id: ID
   name: String
+  nameCN: String
 }
 
 type Subscription {
